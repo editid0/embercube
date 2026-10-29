@@ -13,8 +13,6 @@
   var KINDS = [
     { id: "mac-arm", os: "mac", match: /_aarch64\.dmg$/, label: "macOS · Apple Silicon", file: ".dmg",
       blurb: "For Macs with an M-series chip, which is most Macs since late 2020." },
-    { id: "mac-intel", os: "mac", match: /_x64\.dmg$/, label: "macOS · Intel", file: ".dmg",
-      blurb: "For older Macs with an Intel processor." },
     { id: "win-exe", os: "windows", match: /-setup\.exe$/, label: "Windows installer", file: ".exe",
       blurb: "Recommended for Windows 10 and 11. Installs for your user, no admin rights needed." },
     { id: "win-msi", os: "windows", match: /\.msi$/, label: "Windows MSI package", file: ".msi",
@@ -81,7 +79,8 @@
 
   /** The one file to offer, or null when we can't be sure. */
   function pick(platform, byKind) {
-    if (platform.os === "mac") return platform.arch === "arm64" ? byKind["mac-arm"] : platform.arch === "x64" ? byKind["mac-intel"] : null;
+    // Apple Silicon only: Intel Macs were dropped after 0.5.0.
+    if (platform.os === "mac") return platform.arch === "arm64" ? byKind["mac-arm"] : null;
     // There's no ARM build for Windows yet; the x64 build runs under Windows' emulation.
     if (platform.os === "windows") return byKind["win-exe"];
     return null; // Linux (which package?), phones and unknown systems get a choice.
@@ -156,13 +155,16 @@
     menu.textContent = "";
     var heading =
       chosen ? OS_NAMES[platform.os] + " downloads"
-      : platform.os === "mac" ? "Which Mac do you have?"
+      : platform.os === "mac" && platform.arch === "x64" ? "Intel Macs aren't supported"
+      : platform.os === "mac" ? "Embercube needs a Mac with Apple silicon"
       : platform.os === "linux" ? "Pick the package for your distribution"
       : platform.os === "mobile" ? "Embercube runs on computers. Download it there:"
       : "Choose your download";
     menu.appendChild(el("div", { class: "dl-menu-head", text: heading }));
     if (platform.os === "mac" && !chosen) {
-      menu.appendChild(el("p", { class: "dl-hint", text: "Not sure? Apple menu → About This Mac. It says \"Chip: Apple M…\" or \"Processor: Intel\"." }));
+      menu.appendChild(el("p", { class: "dl-hint", text: platform.arch === "x64"
+        ? "Embercube runs on Macs with an M-series chip (M1 or newer). This Mac looks like it has an Intel processor."
+        : "Check under Apple menu → About This Mac: it should say \"Chip: Apple M…\". Macs with an Intel processor aren't supported." }));
     }
     var likelyList = el("div", { class: "dl-list" });
     likely.forEach(function (i) {

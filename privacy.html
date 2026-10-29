@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Embercube privacy</title>
+    <meta name="description" content="What Embercube stores, where it connects, and what it never collects." />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <div class="wrap">
+        <a class="brand" href="./"><img src="favicon.svg" width="24" height="24" alt="" />Embercube</a>
+        <nav>
+          <a href="./#features">Features</a>
+          <a href="privacy.html">Privacy</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <article class="prose">
+        <h1>Privacy</h1>
+        <p>Last updated 24 October 2026.</p>
+        <p>
+          Embercube is a desktop app that runs entirely on your computer. It has no servers and no analytics, and it collects
+          no telemetry. The developer receives nothing from your use of it.
+        </p>
+
+        <h2>What is stored, and where</h2>
+        <table>
+          <tr>
+            <th>Data</th>
+            <th>Where</th>
+          </tr>
+          <tr>
+            <td>Microsoft sign-in tokens (refresh and access tokens)</td>
+            <td>Encrypted (AES-256-GCM) in the <code>secrets</code> folder of the Embercube data folder. The encryption key is kept in your operating system's credential store: macOS Keychain, Windows Credential Manager, or the Secret Service on Linux.</td>
+          </tr>
+          <tr>
+            <td>Account list: Minecraft username, profile UUID, skin URL</td>
+            <td><code>accounts.json</code> in the Embercube data folder.</td>
+          </tr>
+          <tr>
+            <td>Settings, instances, mods, game files, logs</td>
+            <td>The Embercube data folder on your computer.</td>
+          </tr>
+        </table>
+        <p>
+          Removing an account in Embercube deletes its tokens from the credential store. Deleting the data folder removes
+          everything else.
+        </p>
+
+        <h2>Signing in</h2>
+        <p>
+          Microsoft sign-in uses Microsoft's official device-code flow. You enter a short code on microsoft.com, so
+          Embercube never sees your password. The tokens it receives are used only to get a Minecraft session for launching
+          the game, and they are sent only to Microsoft, Xbox Live and Minecraft services.
+        </p>
+
+        <h2>Where Embercube connects</h2>
+        <table>
+          <tr>
+            <th>Service</th>
+            <th>Why</th>
+          </tr>
+          <tr>
+            <td>login.microsoftonline.com, user.auth.xboxlive.com, xsts.auth.xboxlive.com, api.minecraftservices.com</td>
+            <td>Signing in and loading your Minecraft profile.</td>
+          </tr>
+          <tr>
+            <td>piston-meta.mojang.com, launchermeta.mojang.com, libraries.minecraft.net, resources.download.minecraft.net</td>
+            <td>Game versions, libraries, assets and Java runtimes from Mojang.</td>
+          </tr>
+          <tr>
+            <td>api.modrinth.com, cdn.modrinth.com</td>
+            <td>Searching and downloading mods, modpacks, resource packs and shaders.</td>
+          </tr>
+          <tr>
+            <td>meta.fabricmc.net, meta.quiltmc.org, maven.fabricmc.net, maven.quiltmc.org, maven.minecraftforge.net, files.minecraftforge.net, maven.neoforged.net</td>
+            <td>Installing mod loaders.</td>
+          </tr>
+          <tr>
+            <td>api.adoptium.net, github.com</td>
+            <td>Downloading Java where Mojang doesn't provide a build for your system.</td>
+          </tr>
+        </table>
+        <p>
+          Requests identify the app with a User-Agent of the form <code>EmbercubeMC/embercube/&lt;version&gt;</code>, as
+          Modrinth's API asks. Links you open, such as Modrinth project pages, open in your own browser under that site's
+          policies.
+        </p>
+
+        <h2>Contact</h2>
+        <p>Questions about this page: <a href="https://github.com/editid0">github.com/editid0</a>.</p>
+      </article>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <span>Embercube is not an official Minecraft product. It is not approved by or associated with Mojang or Microsoft.</span>
+        <span><a href="./">Home</a></span>
+      </div>
+    </footer>
+  </body>
+</html>

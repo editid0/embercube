@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Embercube: a Minecraft launcher for every loader</title>
+    <meta
+      name="description"
+      content="Embercube is a fast, open-source Minecraft: Java Edition launcher for macOS, Windows and Linux. Multiple accounts, every mod loader, automatic Java and Modrinth built in."
+    />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <div class="wrap">
+        <a class="brand" href="./"><img src="favicon.svg" width="24" height="24" alt="" />Embercube</a>
+        <nav>
+          <a href="#features">Features</a>
+          <a href="#security">Security</a>
+          <a href="#creators">Creators</a>
+          <a href="#roadmap">Roadmap</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="https://github.com/EmbercubeMC/embercube-releases/releases/latest">Download</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="wrap">
+          <div class="hero-icon"><img src="favicon.svg" width="56" height="56" alt="" /></div>
+          <h1>Every Minecraft.<br />One launcher.</h1>
+          <p class="lede">
+            Embercube runs vanilla, Fabric, Quilt, Forge and NeoForge side by side, finds the right Java on its own, and puts
+            Modrinth's mods and modpacks one click away.
+          </p>
+          <div class="cta">
+            <div class="dl" id="download">
+              <div class="dl-split">
+                <a class="btn primary dl-main" href="https://github.com/EmbercubeMC/embercube-releases/releases/latest">Download for free</a>
+                <button class="btn primary dl-toggle" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="Other downloads" hidden>▾</button>
+              </div>
+              <div class="dl-menu" role="menu" hidden></div>
+              <div class="dl-meta" aria-live="polite"></div>
+            </div>
+            <a class="btn" href="#features">See what it does</a>
+          </div>
+          <p class="fine">
+            For macOS, Windows and Linux. Free, and it updates itself.<br />
+            First launch on macOS: right-click the app and choose Open. On Windows: More info, then Run anyway.
+          </p>
+
+          <div class="mock" aria-label="Embercube library screen" role="img">
+            <div class="mock-top">
+              <div class="dots"><i></i><i></i><i></i></div>
+              <div class="mock-brand"><img src="favicon.svg" width="14" height="14" alt="" />Embercube</div>
+              <div class="mock-tabs"><span class="on">LIBRARY</span><span>DISCOVER</span></div>
+              <div class="mock-search">Search</div>
+            </div>
+            <div class="mock-body">
+              <div class="mock-side">
+                <div class="group">RUNNING (1)</div>
+                <div class="row run"><span class="art" data-seed="survival-smp"></span>Survival SMP</div>
+                <div class="group">MODPACKS (2)</div>
+                <div class="row on"><span class="art" data-seed="fabulously-optimized"></span>Fabulously Optimized</div>
+                <div class="row"><span class="art" data-seed="create-above"></span>Create: Above &amp; Beyond</div>
+                <div class="group">MODDED (3)</div>
+                <div class="row"><span class="art" data-seed="fabric-1-21-1"></span>Fabric 1.21.1</div>
+                <div class="row"><span class="art" data-seed="neoforge-tech"></span>NeoForge Tech</div>
+                <div class="row"><span class="art" data-seed="quilt-skyblock"></span>Quilt Skyblock</div>
+                <div class="group">VANILLA (1)</div>
+                <div class="row"><span class="art" data-seed="classic-1-8-9"></span>Classic 1.8.9</div>
+              </div>
+              <div class="mock-main">
+                <div class="mock-hero">
+                  <span class="art" data-seed="fabulously-optimized"></span>
+                  <div class="copy">
+                    <small>CONTINUE PLAYING</small>
+                    <h3>Fabulously Optimized</h3>
+                    <div class="mock-play">
+                      <span class="btn-play">▶ PLAY</span>
+                      <span class="stat"><b>LAST PLAYED</b>2 h ago</span>
+                      <span class="stat"><b>PLAY TIME</b>41h 12m</span>
+                      <span class="stat"><b>MODS</b>151</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="boxes">
+                  <div class="box"><span class="art" data-seed="survival-smp"></span><span>Survival SMP</span></div>
+                  <div class="box"><span class="art" data-seed="create-above"></span><span>Create: Above &amp; Beyond</span></div>
+                  <div class="box"><span class="art" data-seed="fabric-1-21-1"></span><span>Fabric 1.21.1</span></div>
+                  <div class="box"><span class="art" data-seed="neoforge-tech"></span><span>NeoForge Tech</span></div>
+                  <div class="box"><span class="art" data-seed="quilt-skyblock"></span><span>Quilt Skyblock</span></div>
+                  <div class="box"><span class="art" data-seed="classic-1-8-9"></span><span>Classic 1.8.9</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="mock-status">
+              ⬇ <b style="color: var(--text)">Installing Java 21</b> Downloading runtime
+              <span class="bar"><i></i></span> 62%
+              <span class="live">Survival SMP 1:12:04</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="block" id="features">
+        <div class="wrap">
+          <div class="kicker">What it does</div>
+          <h2>Press Play. Embercube handles the rest.</h2>
+          <div class="grid">
+            <div class="card">
+              <h3>Every loader</h3>
+              <p>
+                <span class="dot" style="background: #86c46f"></span>Vanilla, <span class="dot" style="background: #dbb682"></span>Fabric,
+                <span class="dot" style="background: #c08cff"></span>Quilt, <span class="dot" style="background: #8aa4dc"></span>Forge and
+                <span class="dot" style="background: #f39a4c"></span>NeoForge, installed for you. Forge support starts at 1.13.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Java, handled</h3>
+              <p>Each version gets exactly the Java runtime it needs, downloaded on first launch. No installers, no PATH fiddling.</p>
+            </div>
+            <div class="card">
+              <h3>All your accounts</h3>
+              <p>Sign in with Microsoft once, switch accounts in a click, or pin an account to a specific instance. Tokens are encrypted with a key kept in your OS keychain.</p>
+            </div>
+            <div class="card">
+              <h3>Modrinth built in</h3>
+              <p>Browse mods, modpacks, resource packs and shaders filtered to your instance. Required dependencies come along automatically.</p>
+            </div>
+            <div class="card">
+              <h3>Instances that share</h3>
+              <p>Every instance is its own folder, but libraries, assets, Java and identical mod files are stored once and shared.</p>
+            </div>
+            <div class="card">
+              <h3>Updates you can undo</h3>
+              <p>See which mods, resource packs and shaders have updates, read the changelogs, update everything in one click, and roll back if something breaks.</p>
+            </div>
+            <div class="card">
+              <h3>Checked before Play</h3>
+              <p>Missing dependencies, wrong versions, mods that clash and duplicates are spotted before the game starts, each with a one-click fix.</p>
+            </div>
+            <div class="card">
+              <h3>A crash doctor</h3>
+              <p>If the game crashes, Embercube reads the logs for you, names the mod responsible and offers the fix. The live console is there too.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="block" id="security">
+        <div class="wrap">
+          <div class="kicker">Authentication, security &amp; game ownership</div>
+          <h2>Your account stays yours. Your game stays legit.</h2>
+          <div class="grid sec-grid">
+            <div class="card">
+              <div class="sec-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8.2 8 9 4.6-.8 8-4.5 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>
+              </div>
+              <h3>Signed in by Microsoft, not by us</h3>
+              <p>
+                You sign in on microsoft.com with a short code. Embercube never sees your password. It follows the same
+                Microsoft, Xbox Live and Minecraft services chain as the official launcher.
+              </p>
+            </div>
+            <div class="card">
+              <div class="sec-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+              </div>
+              <h3>Tokens never leave your computer</h3>
+              <p>
+                Sign-in tokens are encrypted on disk with a key that lives in your system's keychain: macOS Keychain,
+                Windows Credential Manager or the Linux Secret Service. There are no Embercube servers and no analytics. Removing an account deletes its tokens.
+              </p>
+            </div>
+            <div class="card">
+              <div class="sec-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 7h16v13H4z"/><path d="M4 7l2-3h12l2 3"/><path d="M9 12h6"/></svg>
+              </div>
+              <h3>You need to own Minecraft</h3>
+              <p>
+                Signing in checks that your Microsoft account has a Minecraft: Java Edition profile, and online play
+                needs it. Embercube doesn't sell, unlock or bypass the game. Offline profiles are for singleplayer and
+                LAN only, and online-mode servers reject them.
+              </p>
+            </div>
+            <div class="card">
+              <div class="sec-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+              </div>
+              <h3>Official files, checked</h3>
+              <p>
+                The game and Java come straight from Mojang (or Adoptium), and mods come from Modrinth, all over HTTPS.
+                Downloads are checked against each source's published checksums. Modpacks can only download from
+                approved hosts, and can't write outside their own folder.
+              </p>
+            </div>
+            <div class="card">
+              <div class="sec-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.7"/><path d="M20 4v5h-5"/></svg>
+              </div>
+              <h3>Updates you can trust</h3>
+              <p>
+                Every Embercube update is signed with our Ed25519 key, and the app refuses to install anything that
+                isn't. A tampered download or a fake update server can't slip something in.
+              </p>
+            </div>
+          </div>
+          <p class="sec-note">
+            More detail on what is stored and which services Embercube talks to is in the <a href="privacy.html">privacy notice</a>.
+          </p>
+        </div>
+      </section>
+
+      <section class="block" id="creators">
+        <div class="wrap split">
+          <div>
+            <div class="kicker">Fair to creators</div>
+            <h2>Mods are made by people. Embercube sends you to them.</h2>
+            <p>
+              Modrinth pays creators from ads on its website and downloads made in its own app. Downloads from third-party
+              launchers don't count toward those payouts, so Embercube doesn't hide the source.
+            </p>
+          </div>
+          <ul class="quote">
+            <li>Every project shows its creators, license, links and donation pages.</li>
+            <li>"Visit on Modrinth" opens the project in your browser, where your visit counts.</li>
+            <li>Files download straight from Modrinth's CDN, once, so public download stats stay honest.</li>
+            <li>Embercube identifies itself to Modrinth's API and respects its rate limits.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="block" id="roadmap">
+        <div class="wrap">
+          <div class="kicker">Coming next</div>
+          <h2>Built to go further than other launchers.</h2>
+          <div class="roadmap">
+            <span>Find a bad mod automatically</span>
+            <span>Share an instance with a code</span>
+            <span>Import from Prism and CurseForge</span>
+            <span>Skin and cape manager</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <span>Embercube is not an official Minecraft product. It is not approved by or associated with Mojang or Microsoft.</span>
+        <span><a href="privacy.html">Privacy</a> · <a href="https://github.com/editid0">Contact</a></span>
+      </div>
+    </footer>
+
+    <script src="download.js" defer></script>
+    <script>
+      // Same generator as the app's InstanceArt: a blocky landscape per seed.
+      (function () {
+        var P = [
+          [["#3d7be0", "#9fd0ff"], ["#7aa6cf", "#4d7d47", "#355a2f"], "#6cc04a", "#fff6c9"],
+          [["#2a1b4d", "#f08a6c"], ["#7c4f73", "#4b3352", "#2b2136"], "#c96a5d", "#ffd9a0"],
+          [["#050816", "#1b2654"], ["#1e2b52", "#151f3b", "#0d1428"], "#2c3d6e", "#e8ecff"],
+          [["#f2a65a", "#fde1ad"], ["#e2ad72", "#c98a4f", "#a66a38"], "#f1cf8d", "#fff4d6"],
+          [["#1c0404", "#6e1a0c"], ["#571511", "#3c0d0b", "#240605"], "#ff6a1f", "#ff9b3d"],
+          [["#07030f", "#2e1748"], ["#e6e2a4", "#bdb87e", "#8f8b5e"], "#f4f0bd", "#d7b8ff"],
+          [["#8fbde6", "#e6f2ff"], ["#b9cfe6", "#e9f1fa", "#d3e0ee"], "#ffffff", "#fffbe8"],
+          [["#ffc2d9", "#fff0f5"], ["#f2a3c4", "#d97aa7", "#a95584"], "#ffd1e3", "#fffaf0"],
+          [["#0f3b3a", "#5fb3a1"], ["#3d8c7c", "#2b6658", "#1b4239"], "#7fd3a8", "#e5fff4"],
+        ];
+        var W = 48, H = 30;
+        function hash(s) {
+          var h = 2166136261;
+          for (var i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); }
+          return h >>> 0;
+        }
+        function rng(a) {
+          return function () {
+            a = (a + 0x6d2b79f5) | 0;
+            var t = Math.imul(a ^ (a >>> 15), 1 | a);
+            t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+            return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+          };
+        }
+        function ridge(r, base, amp, rough) {
+          var y = base + (r() - 0.5) * amp, hs = [];
+          for (var x = 0; x < W; x++) {
+            if (r() < rough) y += Math.round((r() - 0.5) * 3);
+            y = Math.max(base - amp, Math.min(base + amp, y));
+            hs.push(Math.round(y));
+          }
+          var steps = hs.map(function (h, x) { return "V" + h + "H" + (x + 1); }).join("");
+          return { fill: "M0 " + H + steps + "V" + H + "Z", top: "M0 " + hs[0] + steps };
+        }
+        document.querySelectorAll(".art[data-seed]").forEach(function (el, n) {
+          var seed = el.getAttribute("data-seed"), r = rng(hash(seed)), p = P[Math.floor(r() * P.length)];
+          var far = ridge(r, 15, 4, 0.55), mid = ridge(r, 19, 3, 0.45), near = ridge(r, 24, 2, 0.35);
+          var ox = 6 + Math.floor(r() * (W - 14)), oy = 3 + Math.floor(r() * 5), os = 3 + Math.floor(r() * 2);
+          var id = "g" + n;
+          el.innerHTML =
+            '<svg viewBox="0 0 48 30" preserveAspectRatio="xMidYMid slice" shape-rendering="crispEdges">' +
+            '<defs><linearGradient id="' + id + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="' + p[0][0] + '"/><stop offset="1" stop-color="' + p[0][1] + '"/></linearGradient></defs>' +
+            '<rect width="48" height="30" fill="url(#' + id + ')"/>' +
+            '<rect x="' + ox + '" y="' + oy + '" width="' + os + '" height="' + os + '" fill="' + p[3] + '"/>' +
+            '<path d="' + far.fill + '" fill="' + p[1][0] + '"/><path d="' + mid.fill + '" fill="' + p[1][1] + '"/><path d="' + near.fill + '" fill="' + p[1][2] + '"/>' +
+            '<path d="' + near.top + '" fill="none" stroke="' + p[2] + '" stroke-width=".9" transform="translate(0 .45)" opacity=".9"/></svg>';
+        });
+      })();
+    </script>
+  </body>
+</html>
